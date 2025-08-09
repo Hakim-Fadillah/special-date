@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Atur Waktu</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="card">
+    <h1>Pilih tanggal & jam</h1>
+    <p>Isi tanggal, jam berangkat, dan jam pulang.</p>
+
+    <div style="display:grid;gap:8px;margin-top:10px">
+      <label> Tanggal: <input id="date" type="date" /></label>
+      <label> Jam Berangkat: <input id="depart" type="time" /></label>
+      <label> Jam Pulang: <input id="return" type="time" /></label>
+    </div>
+
+    <div style="margin-top:14px;">
+      <button id="okBtn" class="btn btn-pink">Oke</button>
+    </div>
+  </div>
+
+  <script src="js/page3.js"></script>
+</body>
+</html>
