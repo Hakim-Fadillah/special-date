@@ -13,19 +13,19 @@ if(savedName){
   partnerSpan.textContent = savedName;
   avatar.textContent = initials(savedName);
 } else {
-  partnerSpan.textContent = '[nama]';
+  partnerSpan.textContent = 'future';
   avatar.textContent = 'AK';
 }
 
-// click name to edit
-partnerSpan.addEventListener('click', ()=>{
-  const v = prompt('Masukkan nama perempuan yang akan kamu ajak:', partnerSpan.textContent==='[nama]'?'':partnerSpan.textContent);
-  if(v !== null && v.trim() !== ''){
-    partnerSpan.textContent = v.trim();
-    avatar.textContent = initials(v.trim());
-    localStorage.setItem('partnerName', v.trim());
-  }
-});
+// // click name to edit
+// partnerSpan.addEventListener('click', ()=>{
+//   const v = prompt('Masukkan nama perempuan yang akan kamu ajak:', partnerSpan.textContent==='[future]'?'':partnerSpan.textContent);
+//   if(v !== null && v.trim() !== ''){
+//     partnerSpan.textContent = v.trim();
+//     avatar.textContent = initials(v.trim());
+//     localStorage.setItem('partnerName', v.trim());
+//   }
+// });
 
 function initials(name){
   return name.split(' ').map(s=>s[0]?.toUpperCase()||'').slice(0,2).join('');
@@ -36,7 +36,7 @@ tidakBtn.style.position = 'relative';
 tidakBtn.addEventListener('click', (e)=>{
   moveCount++;
   if(moveCount >= MAX_MOVES){
-    alert('please mau dong');
+    alert('please mau dong...');
     return;
   }
   moveButton();

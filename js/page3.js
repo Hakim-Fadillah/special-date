@@ -9,12 +9,12 @@ okBtn.addEventListener('click', ()=>{
   const depart = departEl.value;
   const ret = returnEl.value;
   if(!date || !depart || !ret){
-    alert('Isi semua field ya :)');
+    alert('Diisi semua field nya yaaa :)');
     return;
   }
   // optional: cek depart < return
   if(depart >= ret){
-    if(!confirm('Jam berangkat lebih besar atau sama dengan jam pulang. Lanjutkan?')) return;
+    if(!confirm('Jam berangkat lebih besar atau sama dengan jam pulang, kamu yakin?')) return;
   }
   localStorage.setItem('date', date);
   localStorage.setItem('depart', depart);

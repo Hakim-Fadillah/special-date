@@ -2,15 +2,18 @@
 const summaryEl = document.getElementById('summary');
 const statusEl = document.getElementById('status');
 
-const partnerName = localStorage.getItem('partnerName') || '[nama]';
+const partnerName = localStorage.getItem('partnerName') || '[future]';
 const destinations = JSON.parse(localStorage.getItem('destinations')||'[]');
 const date = localStorage.getItem('date') || '';
 const depart = localStorage.getItem('depart') || '';
 const ret = localStorage.getItem('return') || '';
 
 summaryEl.innerHTML = `
-  Hai <strong>${partnerName}</strong> — rencana: <em>${destinations.join(', ')}</em><br/>
-  Tanggal: <strong>${date}</strong>, Berangkat: <strong>${depart}</strong>, Pulang: <strong>${ret}</strong>
+  Hai <strong>${partnerName}</strong> <br>
+  Rencana: <em>${destinations.join(', ')}</em><br/>
+  Tanggal: <strong>${date}</strong>, 
+  <br>Berangkat: <strong>${depart}</strong>,
+  <br>Pulang: <strong>${ret}</strong>
 `;
 
 /*
@@ -23,12 +26,14 @@ summaryEl.innerHTML = `
 const FORMSPREE_ENDPOINT = 'https://formspree.io/f/mldlajgy'; // <--- ganti ini
 
 function sendNotification(){
-  const payload = {
-    partnerName,
-    destinations: destinations.join(', '),
-    date, depart, ret,
-    subject: `Notifikasi: ${partnerName} mau jalan`
-  };
+    const payload = {
+        subject: `💌 ${partnerName} mau jalan bareng kamu!`,
+        "Nama Partner": partnerName,
+        "Destinasi Pilihan": destinations.join(', '),
+        "Tanggal Pergi": date,
+        "Jam Berangkat": depart,
+        "Jam Pulang": ret
+      };      
 
   fetch(FORMSPREE_ENDPOINT, {
     method:'POST',
@@ -37,7 +42,7 @@ function sendNotification(){
   })
   .then(async res=>{
     if(res.ok){
-      statusEl.textContent = 'Notifikasi terkirim ke emailmu. ✅';
+      statusEl.textContent = 'Notifikasi udah ke kirim ke hakim!! ✅';
     } else {
       const text = await res.text();
       statusEl.textContent = 'Gagal kirim notifikasi. Cek console. ❌';
