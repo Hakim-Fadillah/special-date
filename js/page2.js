@@ -8,13 +8,13 @@ const DESTS = [
   {id:'bioskop', label:'Nonton Bioskop', img:'images/cinema.jpg'},
   {id:'coffee', label:'Coffee Shop', img:'images/cafe.jpg'},
   {id:'photobox', label:'Photobox / Photobooth', img:'images/foto.jpg'},
-  {id:'dinner', label:'Dinner Romantis', img:'images/dinner.jpg'},
+  {id:'dinner', label:'Dinner', img:'images/dinner.jpg'},
   {id:'timezone', label:'Main Timezone', img:'images/timezone.jpg'},
   // rekomendasi tambahan
   // {id:'picnic', label:'Picnic di taman', img:'https://source.unsplash.com/400x300/?picnic,park'},
   // {id:'rooftop', label:'Rooftop / Sunset', img:'https://source.unsplash.com/400x300/?rooftop,view'},
-  {id:'museum', label:'Museum / Galeri', img:'images/museum.jpg'},
-  {id:'bookstore', label:'Bookstore & Cafe', img:'images/bookstore.jpg'}
+  {id:'museum', label:'Museum', img:'images/museum.jpg'},
+  {id:'bookstore', label:'Bookstore', img:'images/bookstore.jpg'}
 ];
 
 function makeChoiceHTML(d){

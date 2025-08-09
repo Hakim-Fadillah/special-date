@@ -11,8 +11,8 @@ const ret = localStorage.getItem('return') || '';
 summaryEl.innerHTML = `
   Hai <strong>${partnerName}</strong> <br>
   Rencana: <em>${destinations.join(', ')}</em><br/>
-  Tanggal: <strong>${date}</strong>, 
-  <br>Berangkat: <strong>${depart}</strong>,
+  Tanggal: <strong>${date}</strong>
+  <br>Berangkat: <strong>${depart}</strong>
   <br>Pulang: <strong>${ret}</strong>
 `;
 

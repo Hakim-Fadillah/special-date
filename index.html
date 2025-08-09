@@ -3,23 +3,171 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Ajak Jalan — Halo</title>
-  <link rel="stylesheet" href="styles.css" />
+  <title>Lets Date</title>
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: linear-gradient(135deg, #ffd6f6, #ffc8e6);
+      overflow: hidden;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    .particle {
+    position: fixed;
+    top: -10px;
+    background: pink;
+    border-radius: 50%;
+    opacity: 0.8;
+    pointer-events: none;
+    animation: fall linear infinite;
+  }
+
+  @keyframes fall {
+    0% {
+      transform: translateX(0) translateY(-10px);
+      opacity: 1;
+    }
+    50% {
+      transform: translateX(20px) translateY(50vh);
+      opacity: 0.9;
+    }
+    100% {
+      transform: translateX(-20px) translateY(110vh);
+      opacity: 0;
+    }
+  }
+
+
+    .card {
+      position: relative;
+      background: white;
+      padding: 30px;
+      border-radius: 20px;
+      border: 3px solid pink;
+      box-shadow: 0 0 20px rgba(255, 105, 180, 0.3);
+      text-align: center;
+      width: 300px;
+    }
+
+    .avatar {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-bottom: 10px;
+      border: 3px solid pink;
+    }
+
+    .header h1 {
+      margin: 0;
+      color: #ff69b4;
+      font-size: 22px;
+    }
+
+    .header p {
+      margin: 5px 0 15px;
+      font-size: 16px;
+      color: #ff4fa3;
+    }
+
+    .buttons {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+    }
+
+    .btn {
+      border: none;
+      padding: 8px 15px;
+      border-radius: 20px;
+      cursor: pointer;
+      font-size: 14px;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+
+    .btn-pink {
+      background: #ff69b4;
+      color: white;
+      animation: bounce 1.5s infinite;
+    }
+
+    .btn-outline {
+      background: white;
+      border: 2px solid #ff69b4;
+      color: #ff69b4;
+    }
+
+    /* Animasi bounce */
+    @keyframes bounce {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-5px); }
+    }
+
+    /* Emoji pojok + animasi goyang */
+    .emoji {
+      position: absolute;
+      font-size: 25px;
+      animation: wiggle 2s infinite ease-in-out;
+    }
+    .emoji-top-left { top: -15px; left: -15px; }
+    .emoji-top-right { top: -15px; right: -15px; }
+    .emoji-bottom-left { bottom: -15px; left: -15px; }
+    .emoji-bottom-right { bottom: -15px; right: -15px; }
+
+    @keyframes wiggle {
+      0%, 100% { transform: rotate(0deg) translateY(0px); }
+      25% { transform: rotate(-5deg) translateY(-2px); }
+      50% { transform: rotate(0deg) translateY(0px); }
+      75% { transform: rotate(5deg) translateY(2px); }
+    }
+  </style>
 </head>
 <body>
+
+  <!-- Card -->
   <div class="card" id="card">
+    <div class="emoji emoji-top-left">🌸</div>
+    <div class="emoji emoji-top-right">🌼</div>
+    <div class="emoji emoji-bottom-left">🧸</div>
+    <div class="emoji emoji-bottom-right">🍪</div>
+
     <div class="header">
-      <img src="images/avatar.jpg" alt="Avatar" class="avatar" id="avatar" />
-      <h1>Halo, <span id="partnerName">Future</span> !!❤️</h1>
-      <p>Mau jalan sama aku nggak?</p>
+      <img src="images/hi.gif" alt="Avatar" class="avatar" id="avatar" />
+      <h1>Halooww, <span id="partnerName">Future ~ </span></h1>
+      <p>Kamu mau jalan sama aku tidakk?</p>
     </div>
 
     <div class="buttons" id="btnWrap">
-      <button id="mauBtn" class="btn btn-pink">Mau</button>
-      <button id="tidakBtn" class="btn btn-outline">Tidak</button>
+      <button id="mauBtn" class="btn btn-pink">Mauuu💖</button>
+      <button id="tidakBtn" class="btn btn-outline">Tidak🥺</button>
     </div>
-    <!-- <p class="small">Klik nama untuk edit.</p> -->
   </div>
+
+  <!-- JS Partikel -->
+  <script>
+    const colors = ['#FF69B4'];
+    const totalParticles = 100;
+    for (let i = 0; i < totalParticles; i++) {
+      const particle = document.createElement('div');
+      particle.classList.add('particle');
+      document.body.appendChild(particle);
+
+      const size = Math.random() * 8 + 8;
+      particle.style.width = size + 'px';
+      particle.style.height = size + 'px';
+      particle.style.left = Math.random() * 100 + 'vw';
+      particle.style.background = colors[Math.floor(Math.random() * colors.length)];
+      particle.style.animationDuration = (Math.random() * 4 + 2) + 's'; // 5-9 detik
+      particle.style.animationDelay = Math.random() * 5 + 's';
+    }
+
+  </script>
 
   <script src="js/page1.js"></script>
 </body>
