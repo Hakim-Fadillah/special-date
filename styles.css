@@ -7,8 +7,13 @@
 
 * {
   box-sizing: border-box;
-  font-family: system-ui, Segoe UI, Roboto, 'Helvetica Neue', Arial;
+  font-family: 'Poppins', sans-serif;
 }
+
+h1, h2 {
+  font-family: 'Great Vibes', cursive;
+}
+
 
 body {
   margin: 0;

@@ -1,6 +1,8 @@
 <!doctype html>
 <html lang="id">
 <head>
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Lets Date</title>
@@ -24,6 +26,7 @@
     opacity: 0.8;
     pointer-events: none;
     animation: fall linear infinite;
+    z-index: 0;
   }
 
   @keyframes fall {
@@ -51,6 +54,7 @@
       box-shadow: 0 0 20px rgba(255, 105, 180, 0.3);
       text-align: center;
       width: 300px;
+      z-index: 1;
     }
 
     .avatar {
@@ -112,8 +116,8 @@
     /* Emoji pojok + animasi goyang */
     .emoji {
       position: absolute;
-      font-size: 25px;
-      animation: wiggle 2s infinite ease-in-out;
+      font-size: 40px;
+      animation: wiggle 1.2s infinite ease-in-out;
     }
     .emoji-top-left { top: -15px; left: -15px; }
     .emoji-top-right { top: -15px; right: -15px; }
@@ -138,7 +142,9 @@
     <div class="emoji emoji-bottom-right">🍪</div>
 
     <div class="header">
-      <img src="images/hi.gif" alt="Avatar" class="avatar" id="avatar" />
+      <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExbDBoM2dvZDN0dnRpbnc1Y250OHM2NndvM3g5bjltMmhqYWQ3MjY0OCZlcD12MV9zdGlja2Vyc19zZWFyY2gmY3Q9cw/NxgjDYxluo0sRjHw80/giphy.gif" 
+          class="avatar" 
+          id="avatar"/>
       <h1>Halooww, <span id="partnerName">Future ~ </span></h1>
       <p>Kamu mau jalan sama aku tidakk?</p>
     </div>
@@ -163,7 +169,7 @@
       particle.style.height = size + 'px';
       particle.style.left = Math.random() * 100 + 'vw';
       particle.style.background = colors[Math.floor(Math.random() * colors.length)];
-      particle.style.animationDuration = (Math.random() * 4 + 2) + 's'; // 5-9 detik
+      particle.style.animationDuration = (Math.random() * 4 + 4) + 's'; // 5-9 detik
       particle.style.animationDelay = Math.random() * 5 + 's';
     }
 
